@@ -1,0 +1,104 @@
+<!--pages/index.wxml-->
+<view class="container">
+  <view class="header">
+    <text class="title">AES 加密解密示例</text>
+  </view>
+
+  <!-- 原文输入区域 -->
+  <view class="section">
+    <view class="section-title">原文输入</view>
+    <textarea
+      class="input-textarea"
+      value="{{plainText}}"
+      placeholder="请输入要加密的内容"
+      bindinput="onPlainTextInput"
+      maxlength="500"
+      show-confirm-bar="{{false}}"
+    />
+  </view>
+
+  <!-- 标准 Base64 加密解密 -->
+  <view class="section">
+    <view class="section-title">标准 Base64 加密/解密</view>
+
+    <view class="action-bar">
+      <button class="btn btn-primary" bindtap="handleEncrypt">加密</button>
+      <button class="btn btn-secondary" bindtap="handleDecrypt">解密</button>
+    </view>
+
+    <view class="result-box">
+      <view class="result-label">加密结果：</view>
+      <view class="result-content">
+        <text class="result-text" selectable="{{true}}">{{encryptedText || '暂无'}}</text>
+        <text
+          class="copy-btn"
+          data-text="{{encryptedText}}"
+          bindtap="copyText"
+          wx:if="{{encryptedText}}"
+        >
+          复制
+        </text>
+      </view>
+    </view>
+
+    <view class="result-box">
+      <view class="result-label">解密结果：</view>
+      <view class="result-content">
+        <text class="result-text" selectable="{{true}}">{{decryptedText || '暂无'}}</text>
+        <text
+          class="copy-btn"
+          data-text="{{decryptedText}}"
+          bindtap="copyText"
+          wx:if="{{decryptedText}}"
+        >
+          复制
+        </text>
+      </view>
+    </view>
+  </view>
+
+  <!-- URL Safe Base64 加密解密 -->
+  <view class="section">
+    <view class="section-title">URL Safe Base64 加密/解密</view>
+
+    <view class="action-bar">
+      <button class="btn btn-primary" bindtap="handleBase64Encrypt">加密</button>
+      <button class="btn btn-secondary" bindtap="handleBase64Decrypt">解密</button>
+    </view>
+
+    <view class="result-box">
+      <view class="result-label">加密结果：</view>
+      <view class="result-content">
+        <text class="result-text" selectable="{{true}}">{{base64EncryptedText || '暂无'}}</text>
+        <text
+          class="copy-btn"
+          data-text="{{base64EncryptedText}}"
+          bindtap="copyText"
+          wx:if="{{base64EncryptedText}}"
+        >
+          复制
+        </text>
+      </view>
+    </view>
+
+    <view class="result-box">
+      <view class="result-label">解密结果：</view>
+      <view class="result-content">
+        <text class="result-text" selectable="{{true}}">{{base64DecryptedText || '暂无'}}</text>
+        <text
+          class="copy-btn"
+          data-text="{{base64DecryptedText}}"
+          bindtap="copyText"
+          wx:if="{{base64DecryptedText}}"
+        >
+          复制
+        </text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 错误信息显示 -->
+  <view class="error-box" wx:if="{{errorMessage}}">
+    <text class="error-text">{{errorMessage}}</text>
+  </view>
+</view>

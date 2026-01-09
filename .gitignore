@@ -1,0 +1,58 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Dependencies
+node_modules
+
+# Build outputs
+dist
+dist-ssr
+coverage
+*.local
+
+# TypeScript
+*.tsbuildinfo
+
+# ESLint
+.eslintcache
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# WeChat MiniProgram
+# npm 构建产物（通过微信开发者工具构建 npm 后生成）
+miniprogram/miniprogram_npm/
+
+# 微信开发者工具私有配置文件（包含个人开发环境配置）
+project.private.config.json
+
+# 微信开发者工具临时文件
+*.wxapkg
+*.wxss.map
+*.wxml.map
+*.js.map
+
+# Testing
+# Cypress
+/cypress/videos/
+/cypress/screenshots/
+
+# Vitest
+__screenshots__/

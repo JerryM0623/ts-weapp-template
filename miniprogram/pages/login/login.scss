@@ -1,0 +1,142 @@
+/* pages/login/login.wxss */
+
+// 容器样式
+.login-container {
+  min-height: 100vh;
+  background: white;
+  padding: 40rpx 30rpx;
+  box-sizing: border-box;
+}
+
+// 头部标题区域
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 60rpx;
+
+  .title {
+    font-size: 48rpx;
+    font-weight: bold;
+    color: #333333;
+    margin-bottom: 20rpx;
+  }
+
+  .subtitle {
+    font-size: 28rpx;
+    color: rgba(0, 0, 0, 0.8);
+  }
+}
+
+// 功能区块样式
+.form-section {
+  background: #ffffff;
+  border-radius: 20rpx;
+  padding: 40rpx 30rpx;
+  margin-bottom: 30rpx;
+  box-shadow: 0 8rpx 24rpx rgba(0, 0, 0, 0.1);
+
+  .section-title {
+    font-size: 32rpx;
+    font-weight: bold;
+    color: #333333;
+    margin-bottom: 30rpx;
+    padding-bottom: 20rpx;
+    border-bottom: 2rpx solid #f0f0f0;
+  }
+
+  // 输入框样式
+  .input-item {
+    margin-bottom: 25rpx;
+  }
+
+  // 按钮组样式
+  .button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 20rpx;
+    margin-top: 20rpx;
+  }
+
+  // 信息展示框
+  .info-box {
+    margin-top: 30rpx;
+    padding: 20rpx;
+    background: #f8f9fa;
+    border-radius: 12rpx;
+    border-left: 6rpx solid #0052d9;
+
+    &.success {
+      background: #e8f5e9;
+      border-left-color: #4caf50;
+    }
+
+    .info-text {
+      font-size: 24rpx;
+      color: #666666;
+      word-break: break-all;
+      white-space: pre-wrap;
+    }
+  }
+
+  // 头像区域
+  .avatar-section {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30rpx;
+
+    .avatar-preview {
+      width: 200rpx;
+      height: 200rpx;
+      border-radius: 100rpx;
+      border: 4rpx solid #0052d9;
+    }
+
+    .avatar-placeholder {
+      width: 200rpx;
+      height: 200rpx;
+      border-radius: 100rpx;
+      border: 4rpx dashed #cccccc;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f8f9fa;
+
+      text {
+        font-size: 24rpx;
+        color: #999999;
+      }
+    }
+  }
+}
+
+// 文档说明区域
+.doc-section {
+  background: #ffffff;
+  border-radius: 20rpx;
+  padding: 40rpx 30rpx;
+  margin-bottom: 30rpx;
+  box-shadow: 0 8rpx 24rpx rgba(0, 0, 0, 0.1);
+
+  .section-title {
+    font-size: 32rpx;
+    font-weight: bold;
+    color: #333333;
+    margin-bottom: 30rpx;
+    padding-bottom: 20rpx;
+    border-bottom: 2rpx solid #f0f0f0;
+  }
+
+  .doc-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20rpx;
+
+    .doc-item {
+      font-size: 28rpx;
+      color: #666666;
+      line-height: 1.8;
+      padding-left: 10rpx;
+    }
+  }
+}

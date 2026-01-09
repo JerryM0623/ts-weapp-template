@@ -1,0 +1,74 @@
+<!--pages/date/date.wxml-->
+<view class="container">
+  <view class="header">
+    <text class="title">日期时间格式化示例</text>
+  </view>
+
+  <!-- formatTime 函数示例 -->
+  <view class="section">
+    <view class="section-title">formatTime 函数示例</view>
+    <view class="section-desc">固定格式：YYYY/MM/DD HH:mm:ss</view>
+    <view class="example-list">
+      <view class="example-item" wx:for="{{formatTimeExamples}}" wx:key="label">
+        <view class="example-label">{{item.label}}：</view>
+        <view class="example-value">
+          <text class="result-text" selectable="{{true}}">{{item.value}}</text>
+          <text
+            class="copy-btn"
+            data-text="{{item.value}}"
+            bindtap="copyText"
+            wx:if="{{item.value}}"
+          >
+            复制
+          </text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- formatDateTime 函数示例 - 不同格式模板 -->
+  <view class="section">
+    <view class="section-title">formatDateTime 函数示例 - 不同格式模板</view>
+    <view class="section-desc">支持自定义格式模板，灵活配置日期时间显示格式</view>
+    <view class="example-list">
+      <view class="example-item" wx:for="{{formatDateTimeExamples}}" wx:key="label">
+        <view class="example-label">{{item.label}}</view>
+        <view class="example-format">格式模板：{{item.format}}</view>
+        <view class="example-value">
+          <text class="result-text" selectable="{{true}}">{{item.value}}</text>
+          <text
+            class="copy-btn"
+            data-text="{{item.value}}"
+            bindtap="copyText"
+            wx:if="{{item.value}}"
+          >
+            复制
+          </text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- formatDateTime 函数示例 - 不同输入类型 -->
+  <view class="section">
+    <view class="section-title">formatDateTime 函数示例 - 不同输入类型</view>
+    <view class="section-desc">支持 Date 对象、时间戳、日期字符串等多种输入类型</view>
+    <view class="example-list">
+      <view class="example-item" wx:for="{{inputTypeExamples}}" wx:key="label">
+        <view class="example-label">{{item.label}}</view>
+        <view class="example-format">输入：{{item.input}}</view>
+        <view class="example-value">
+          <text class="result-text" selectable="{{true}}">{{item.value}}</text>
+          <text
+            class="copy-btn"
+            data-text="{{item.value}}"
+            bindtap="copyText"
+            wx:if="{{item.value}}"
+          >
+            复制
+          </text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

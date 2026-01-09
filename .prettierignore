@@ -1,0 +1,12 @@
+# 依赖目录
+node_modules/
+miniprogram_npm/
+
+# 构建产物
+dist/
+coverage/
+
+# 其他
+*.log
+.DS_Store
+package-lock.json
