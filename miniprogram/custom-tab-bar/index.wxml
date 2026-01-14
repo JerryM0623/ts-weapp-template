@@ -1,0 +1,6 @@
+<!--custom-tab-bar/index.wxml-->
+<t-tab-bar t-class="t-tab-bar" value="{{value}}" bindchange="onChange" fixed="{{false}}" split="{{false}}">
+  <t-tab-bar-item wx:for="{{list}}" wx:key="value" value="{{item.value}}" icon="{{item.icon}}">
+    {{item.label}}
+  </t-tab-bar-item>
+</t-tab-bar>
