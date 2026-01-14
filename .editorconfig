@@ -1,4 +1,4 @@
-[*.{js,jsx,mjs,cjs,ts,tsx,mts,cts,vue,css,scss,sass,less,styl}]
+[*.{html,wxml,json,xml,yaml,yml,js,jsx,mjs,cjs,ts,tsx,mts,cts,vue,css,scss,sass,less,styl,wxss}]
 charset = utf-8
 indent_size = 2
 indent_style = space
