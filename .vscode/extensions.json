@@ -1,25 +1,16 @@
 {
   "recommendations": [
-    // --- 核心基础体验 ---
-    "MS-CEINTL.vscode-language-pack-zh-hans", // 中文包
-    "PKief.material-icon-theme", // 图标主题
-    "EditorConfig.EditorConfig", // 跨编辑器配置统一
-
-    // --- 视觉与阅读辅助 ---
-    "usernamehw.errorlens", // 错误直接显示在行尾 (神器)
-    "oderwat.indent-rainbow", // 缩进颜色高亮
-    "wayou.vscode-todo-highlight", // TODO 高亮
-
-    // --- 编写效率工具 ---
-    "formulahendry.auto-close-tag", // 自动闭合标签
-    "formulahendry.auto-rename-tag", // 标签同步重命名
-    "christian-kohler.path-intellisense", // 文件路径自动补全
-
-    // --- 代码质量管控 ---
-    "dbaeumer.vscode-eslint", // JS/TS 代码校验
-    "esbenp.prettier-vscode", // 代码美化格式化
-
-    // --- Git 与 文档 ---
-    "eamodio.gitlens" // Git 历史查看神器
+    "MS-CEINTL.vscode-language-pack-zh-hans",
+    "PKief.material-icon-theme",
+    "EditorConfig.EditorConfig",
+    "usernamehw.errorlens",
+    "oderwat.indent-rainbow",
+    "wayou.vscode-todo-highlight",
+    "formulahendry.auto-close-tag",
+    "formulahendry.auto-rename-tag",
+    "christian-kohler.path-intellisense",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "eamodio.gitlens"
   ]
 }
