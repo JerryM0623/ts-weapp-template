@@ -18,6 +18,7 @@
 - 基于 axios-miniprogram 的网络请求封装，支持自动 Token 注入、统一错误处理、智能加载动画管理
 - AES-256 加密解密工具，支持标准 Base64 和 URL Safe Base64 两种格式
 - 集成 TDesign 组件库，提供丰富的 UI 组件
+- 自定义 TabBar 实现，基于 TDesign 组件，支持自动状态同步和页面切换
 - 完善的代码规范配置，支持 ESLint 和 Prettier 自动格式化
 - 请求拦截器和响应拦截器，统一处理认证、错误和加载状态
 - 文件上传功能封装，支持上传进度回调
@@ -65,16 +66,25 @@
 ## 项目结构
 
 ```
-my-weapp-template2/
+ts-weapp-template/
 ├── miniprogram/              # 小程序源码目录
 │   ├── api/                  # API 接口定义
 │   │   ├── login.ts         # 登录接口示例
 │   │   └── types.ts         # 类型定义
 │   ├── components/          # 自定义组件目录
+│   ├── custom-tab-bar/      # 自定义 TabBar 组件
+│   │   ├── index.ts        # TabBar 组件逻辑
+│   │   ├── index.wxml      # TabBar 模板
+│   │   ├── index.json      # TabBar 配置
+│   │   └── index.scss      # TabBar 样式
 │   ├── pages/               # 页面目录
 │   │   ├── index/          # 首页
 │   │   ├── login/          # 登录页
-│   │   └── date/           # 日期页
+│   │   ├── date/           # 日期页
+│   │   ├── one/            # TabBar 页面一
+│   │   ├── two/            # TabBar 页面二
+│   │   ├── three/          # TabBar 页面三
+│   │   └── four/           # TabBar 页面四
 │   ├── utils/              # 工具函数
 │   │   ├── request.ts      # 网络请求封装
 │   │   ├── aes.ts          # AES 加密解密工具
@@ -219,6 +229,92 @@ const strDate = formatDateTime('2024-01-15', 'YYYY年MM月DD日')
 - `A`: 上午/下午
 - `a`: 上午/下午(小写)
 
+### 自定义 TabBar
+
+项目提供了基于 TDesign 组件的自定义 TabBar 实现，位于 `miniprogram/custom-tab-bar/` 目录。
+
+**主要特性：**
+
+- 基于 TDesign 的 `t-tab-bar` 和 `t-tab-bar-item` 组件，样式统一美观
+- 自动状态同步，根据当前页面路由自动更新激活状态
+- 支持页面切换，点击 TabBar 项自动跳转到对应页面
+- 完整的 TypeScript 类型支持
+- 易于扩展和自定义
+
+**配置说明：**
+
+1. **在 `app.json` 中启用自定义 TabBar：**
+
+```json
+{
+  "tabBar": {
+    "custom": true,
+    "color": "#000000",
+    "selectedColor": "#000000",
+    "backgroundColor": "#000000",
+    "list": [
+      {
+        "pagePath": "pages/one/index",
+        "text": "页面一"
+      },
+      {
+        "pagePath": "pages/two/index",
+        "text": "页面二"
+      },
+      {
+        "pagePath": "pages/three/index",
+        "text": "页面三"
+      },
+      {
+        "pagePath": "pages/four/index",
+        "text": "页面四"
+      }
+    ]
+  }
+}
+```
+
+2. **TabBar 组件配置：**
+
+在 `miniprogram/custom-tab-bar/index.ts` 中配置 TabBar 项：
+
+```typescript
+data: {
+  value: 'label_1',
+  list: [
+    { value: 'label_1', label: '首页', icon: 'home', pagePath: '/pages/one/index' },
+    { value: 'label_2', label: '应用', icon: 'app', pagePath: '/pages/two/index' },
+    { value: 'label_3', label: '聊天', icon: 'chat', pagePath: '/pages/three/index' },
+    { value: 'label_4', label: '我的', icon: 'user', pagePath: '/pages/four/index' },
+  ],
+}
+```
+
+**在 TabBar 页面中使用：**
+
+每个 TabBar 页面需要在 `onShow` 生命周期中调用 `init()` 方法来同步 TabBar 状态：
+
+```typescript
+Page({
+  onShow() {
+    // 同步 TabBar 激活状态
+    this.getTabBar().init()
+  },
+})
+```
+
+**自定义 TabBar 项：**
+
+如需添加或修改 TabBar 项，请按以下步骤操作：
+
+1. 在 `miniprogram/custom-tab-bar/index.ts` 的 `data.list` 数组中添加或修改配置项
+2. 在 `miniprogram/app.json` 的 `tabBar.list` 数组中同步更新配置
+3. 确保对应的页面已创建并在 `app.json` 的 `pages` 数组中注册
+
+**支持的图标类型：**
+
+TDesign TabBar 组件支持多种内置图标，常用的有：`home`、`app`、`chat`、`user`、`setting` 等。更多图标类型请参考 [TDesign 图标文档](https://tdesign.tencent.com/miniprogram/components/tab-bar)。
+
 ## 开发指南
 
 ### 代码规范
@@ -244,6 +340,12 @@ npm run format:check
 1. 在 `miniprogram/pages/` 目录下创建新页面文件夹
 2. 创建页面文件：`index.ts`、`index.wxml`、`index.scss`、`index.json`
 3. 在 `miniprogram/app.json` 的 `pages` 数组中添加页面路径
+
+**注意：** 如果新页面是 TabBar 页面，还需要：
+
+- 在 `app.json` 的 `tabBar.list` 数组中添加配置
+- 在 `miniprogram/custom-tab-bar/index.ts` 的 `data.list` 数组中添加配置
+- 在页面的 `onShow` 生命周期中调用 `this.getTabBar().init()` 同步状态
 
 ### 添加新 API
 
@@ -295,6 +397,8 @@ export const getUserInfo = (id: number) => {
 4. **请求白名单**: 不需要认证的接口需要在 `request.ts` 的 `requestWhiteList` 数组中配置
 5. **加密密钥**: 默认的 AES 密钥和 IV 仅用于开发测试，生产环境请务必修改
 6. **npm 构建**: 修改 `package.json` 中的依赖后，需要在微信开发者工具中重新构建 npm
+7. **自定义 TabBar**: TabBar 页面必须在 `onShow` 生命周期中调用 `this.getTabBar().init()` 来同步 TabBar 状态，否则可能出现状态不同步的问题
+8. **TabBar 配置一致性**: 确保 `app.json` 的 `tabBar.list` 和 `custom-tab-bar/index.ts` 的 `data.list` 配置保持一致，包括页面路径和顺序
 
 ## 许可证
 
