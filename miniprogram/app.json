@@ -1,10 +1,42 @@
 {
-  "pages": ["pages/date/date", "pages/login/login", "pages/index/index"],
+  "pages": [
+    "pages/date/date",
+    "pages/login/login",
+    "pages/index/index",
+    "pages/one/index",
+    "pages/two/index",
+    "pages/three/index",
+    "pages/four/index"
+  ],
   "window": {
     "navigationStyle": "default",
     "navigationBarTextStyle": "black",
     "navigationBarBackgroundColor": "#ffffff",
     "navigationBarTitleText": "My Weapp Template"
+  },
+  "tabBar": {
+    "custom": true,
+    "color": "#000000",
+    "selectedColor": "#000000",
+    "backgroundColor": "#000000",
+    "list": [
+      {
+        "pagePath": "pages/one/index",
+        "text": "页面一"
+      },
+      {
+        "pagePath": "pages/two/index",
+        "text": "页面二"
+      },
+      {
+        "pagePath": "pages/three/index",
+        "text": "页面三"
+      },
+      {
+        "pagePath": "pages/four/index",
+        "text": "页面四"
+      }
+    ]
   },
   "style": "v2",
   "renderer": "webview",
