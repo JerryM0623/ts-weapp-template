@@ -28,9 +28,7 @@
     />
 
     <view class="button-group">
-      <t-button theme="primary" size="large" bind:tap="handleLogin" block>
-        登录
-      </t-button>
+      <t-button theme="primary" size="large" bind:tap="handleLogin" block> 登录 </t-button>
     </view>
   </view>
 </view>
