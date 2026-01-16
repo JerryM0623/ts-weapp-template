@@ -1,3 +1,5 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "page-container": "../../components/page-container/page-container"
+  }
 }

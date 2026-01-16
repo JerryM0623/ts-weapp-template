@@ -9,10 +9,7 @@
     "pages/four/index"
   ],
   "window": {
-    "navigationStyle": "default",
-    "navigationBarTextStyle": "black",
-    "navigationBarBackgroundColor": "#ffffff",
-    "navigationBarTitleText": "My Weapp Template"
+    "navigationStyle": "custom"
   },
   "tabBar": {
     "custom": true,

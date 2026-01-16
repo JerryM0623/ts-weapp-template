@@ -1,34 +1,30 @@
 <!--pages/login/login.wxml-->
-<view class="login-container">
-  <!-- 标题区域 -->
-  <view class="header">
-    <text class="title">Request.ts 使用示例</text>
-    <text class="subtitle">演示网络请求封装的各种用法</text>
-  </view>
+<page-container title="Request 使用示例">
+  <view class="login-container">
+    <!-- 登录表单区域 -->
+    <view class="form-section">
+      <view class="section-title">1. POST 请求示例 - 登录</view>
 
-  <!-- 登录表单区域 -->
-  <view class="form-section">
-    <view class="section-title">1. POST 请求示例 - 登录</view>
+      <t-input
+        placeholder="请输入用户名"
+        value="{{username}}"
+        bind:change="onUsernameChange"
+        class="input-item"
+        clearable
+      />
 
-    <t-input
-      placeholder="请输入用户名"
-      value="{{username}}"
-      bind:change="onUsernameChange"
-      class="input-item"
-      clearable
-    />
+      <t-input
+        placeholder="请输入密码"
+        value="{{password}}"
+        type="password"
+        bind:change="onPasswordChange"
+        class="input-item"
+        clearable
+      />
 
-    <t-input
-      placeholder="请输入密码"
-      value="{{password}}"
-      type="password"
-      bind:change="onPasswordChange"
-      class="input-item"
-      clearable
-    />
-
-    <view class="button-group">
-      <t-button theme="primary" size="large" bind:tap="handleLogin" block> 登录 </t-button>
+      <view class="button-group">
+        <t-button theme="primary" size="large" bind:tap="handleLogin" block> 登录 </t-button>
+      </view>
     </view>
   </view>
-</view>
+</page-container>

@@ -1,0 +1,35 @@
+<!--components/page-container/page-container.wxml-->
+<view class="page-container">
+  <!-- 导航栏 -->
+  <t-navbar
+    title="{{title}}"
+    left-arrow="{{showLeftArrow}}"
+    fixed="{{fixed}}"
+    placeholder="{{placeholder}}"
+    safe-area-inset-top="{{safeAreaInsetTop}}"
+    z-index="{{zIndex}}"
+    animation="{{animation}}"
+    delta="{{delta}}"
+    title-max-length="{{titleMaxLength}}"
+    visible="{{visible}}"
+    bind:go-back="goBack"
+    bind:success="handleBackSuccess"
+    bind:fail="handleBackFail"
+    bind:complete="handleBackComplete"
+    style="--td-navbar-color: {{textColor}};--td-navbar-bg-color: {{backgroundColor}};"
+  >
+    <!-- 左侧自定义内容插槽 -->
+    <slot name="left" slot="left"></slot>
+    <!-- 胶囊区域自定义内容插槽 -->
+    <slot name="capsule" slot="capsule"></slot>
+    <!-- 标题自定义内容插槽 -->
+    <slot name="title" slot="title"></slot>
+  </t-navbar>
+
+  <!-- 内容区域 -->
+  <view
+    class="page-container__content"
+  >
+    <slot></slot>
+  </view>
+</view>

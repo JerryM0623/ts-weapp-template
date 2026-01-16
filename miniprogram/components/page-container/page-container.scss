@@ -1,0 +1,18 @@
+/* components/page-container/page-container.wxss */
+
+.page-container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.page-container__content {
+  flex: 1;
+  width: 100%;
+  box-sizing: border-box;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
