@@ -37,7 +37,8 @@
     "condition": false,
     "swc": true,
     "disableSWC": false,
-    "disableUseStrict": false
+    "disableUseStrict": false,
+    "urlCheck": false
   },
   "simulatorType": "wechat",
   "simulatorPluginLibVersion": {},
