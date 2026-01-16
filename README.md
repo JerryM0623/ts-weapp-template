@@ -30,7 +30,7 @@
 
 - Node.js >= 18
 - 微信开发者工具（最新版本）
-- npm
+- pnpm
 
 ### 安装步骤
 
@@ -51,7 +51,7 @@
 - 安装依赖
 
   ```bash
-  npm install
+  pnpm install
   ```
 
 - 构建 npm 包
@@ -338,16 +338,16 @@ TDesign TabBar 组件支持多种内置图标，常用的有：`home`、`app`、
 
 ```bash
 # 检查代码规范
-npm run lint
+pnpm lint
 
 # 自动修复代码规范问题
-npm run lint:fix
+pnpm lint:fix
 
 # 格式化代码
-npm run format
+pnpm format
 
 # 检查代码格式
-npm run format:check
+pnpm format:check
 ```
 
 ### 添加新页面
