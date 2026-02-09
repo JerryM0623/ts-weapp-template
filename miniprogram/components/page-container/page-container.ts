@@ -6,59 +6,69 @@ Component({
    */
   properties: {
     // 导航栏标题
-    title: {
+    navBarTitle: {
       type: String,
       value: '',
     },
     // 是否显示返回按钮
-    leftArrow: {
+    navBarLeftArrow: {
       type: Boolean,
       value: true,
     },
     // 导航栏是否固定
-    fixed: {
+    navBarFixed: {
       type: Boolean,
       value: true,
     },
     // 导航栏占位
-    placeholder: {
+    navBarPlaceholder: {
       type: Boolean,
       value: true,
     },
     // 是否适配安全区域顶部
-    safeAreaInsetTop: {
+    navBarSafeAreaInsetTop: {
       type: Boolean,
       value: true,
     },
     // 导航栏层级
-    zIndex: {
+    navBarZIndex: {
       type: Number,
       value: 10000,
     },
     // 是否带动画效果
-    animation: {
+    navBarAnimation: {
       type: Boolean,
       value: true,
     },
     // 标题最大长度，超出用 "…" 表示
-    titleMaxLength: {
+    navBarTitleMaxLength: {
       type: Number,
       value: undefined,
     },
     // 是否显示导航栏
-    visible: {
+    navBarVisible: {
       type: Boolean,
       value: true,
     },
     // 导航栏背景色
-    backgroundColor: {
+    navBarBackgroundColor: {
       type: String,
       value: '#ffffff',
     },
     // 导航栏文本颜色（标题、返回按钮等）
-    textColor: {
+    navBarTextColor: {
       type: String,
       value: '#000000',
+    },
+    // 是否开启底部安全区适配
+    containerSafeAreaInsetBottom: {
+      type: Boolean,
+      value: true,
+    },
+    // pageContainer背景色
+    containerBackgroundColor: {
+      type: String,
+      value: '#f5f5f5',
     },
   },
 
@@ -101,8 +111,8 @@ Component({
      */
     checkShowLeftArrow() {
       const pages = getCurrentPages()
-      const leftArrow = this.properties.leftArrow
-      const visible = this.properties.visible
+      const leftArrow = this.properties.navBarLeftArrow
+      const visible = this.properties.navBarVisible
       const showLeftArrow = pages.length > 1 && leftArrow && visible
       this.setData({
         showLeftArrow,

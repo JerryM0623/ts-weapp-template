@@ -1,5 +1,5 @@
 <!--pages/date/date.wxml-->
-<page-container title="日期时间格式化示例" backgroundColor="#123321" textColor="#ffffff">
+<page-container navBarTitle="日期时间格式化示例" navBarBackgroundColor="#123321" navBarTextColor="#ffffff">
   <view class="container">
     <!-- formatTime 函数示例 -->
     <view class="section">

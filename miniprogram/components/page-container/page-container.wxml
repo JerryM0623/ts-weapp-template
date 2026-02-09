@@ -1,22 +1,24 @@
 <!--components/page-container/page-container.wxml-->
-<view class="page-container">
+<view
+  class="page-container {{containerSafeAreaInsetBottom ? 'page-container--safe' : ''}}"
+  style="--pg-container-bg-color: {{containerBackgroundColor}};"
+>
   <!-- 导航栏 -->
   <t-navbar
-    title="{{title}}"
+    title="{{navBarTitle}}"
     left-arrow="{{showLeftArrow}}"
-    fixed="{{fixed}}"
-    placeholder="{{placeholder}}"
-    safe-area-inset-top="{{safeAreaInsetTop}}"
-    z-index="{{zIndex}}"
-    animation="{{animation}}"
-    delta="{{delta}}"
-    title-max-length="{{titleMaxLength}}"
-    visible="{{visible}}"
+    fixed="{{navBarFixed}}"
+    placeholder="{{navBarPlaceholder}}"
+    safe-area-inset-top="{{navBarSafeAreaInsetTop}}"
+    z-index="{{navBarZIndex}}"
+    animation="{{navBarAnimation}}"
+    title-max-length="{{navBarTitleMaxLength}}"
+    visible="{{navBarVisible}}"
     bind:go-back="goBack"
     bind:success="handleBackSuccess"
     bind:fail="handleBackFail"
     bind:complete="handleBackComplete"
-    style="--td-navbar-color: {{textColor}};--td-navbar-bg-color: {{backgroundColor}};"
+    style="--td-navbar-color: {{navBarTextColor}};--td-navbar-bg-color: {{navBarBackgroundColor}};"
   >
     <!-- 左侧自定义内容插槽 -->
     <slot name="left" slot="left"></slot>
