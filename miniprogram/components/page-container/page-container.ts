@@ -40,11 +40,6 @@ Component({
       type: Boolean,
       value: true,
     },
-    // 后退的层数
-    delta: {
-      type: Number,
-      value: 1,
-    },
     // 标题最大长度，超出用 "…" 表示
     titleMaxLength: {
       type: Number,
@@ -118,25 +113,20 @@ Component({
      * 返回按钮点击事件
      */
     goBack() {
-      const pages = getCurrentPages()
-      const delta = this.properties.delta
-      if (pages.length > 1 && delta > 0) {
-        wx.navigateBack({
-          delta,
-          success: (res) => {
-            // 转发成功事件
-            this.triggerEvent('success', res)
-            // 转发完成事件
-            this.triggerEvent('complete', res)
-          },
-          fail: (err) => {
-            // 转发失败事件
-            this.triggerEvent('fail', err)
-            // 转发完成事件
-            this.triggerEvent('complete', err)
-          },
-        })
-      }
+      wx.navigateBack({
+        success: (res) => {
+          // 转发成功事件
+          this.triggerEvent('success', res)
+          // 转发完成事件
+          this.triggerEvent('complete', res)
+        },
+        fail: (err) => {
+          // 转发失败事件
+          this.triggerEvent('fail', err)
+          // 转发完成事件
+          this.triggerEvent('complete', err)
+        },
+      })
     },
 
     /**
