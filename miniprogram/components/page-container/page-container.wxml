@@ -15,9 +15,6 @@
     title-max-length="{{navBarTitleMaxLength}}"
     visible="{{navBarVisible}}"
     bind:go-back="goBack"
-    bind:success="handleBackSuccess"
-    bind:fail="handleBackFail"
-    bind:complete="handleBackComplete"
     style="--td-navbar-color: {{navBarTextColor}};--td-navbar-bg-color: {{navBarBackgroundColor}};"
   >
     <!-- 左侧自定义内容插槽 -->

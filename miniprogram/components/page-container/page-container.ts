@@ -123,6 +123,7 @@ Component({
      * 返回按钮点击事件
      */
     goBack() {
+      console.warn('点击了箭头按钮')
       wx.navigateBack({
         success: (res) => {
           // 转发成功事件
@@ -137,27 +138,6 @@ Component({
           this.triggerEvent('complete', err)
         },
       })
-    },
-
-    /**
-     * 处理返回成功事件（从 t-navbar 转发）
-     */
-    handleBackSuccess(e: WechatMiniprogram.CustomEvent) {
-      this.triggerEvent('success', e.detail)
-    },
-
-    /**
-     * 处理返回失败事件（从 t-navbar 转发）
-     */
-    handleBackFail(e: WechatMiniprogram.CustomEvent) {
-      this.triggerEvent('fail', e.detail)
-    },
-
-    /**
-     * 处理返回完成事件（从 t-navbar 转发）
-     */
-    handleBackComplete(e: WechatMiniprogram.CustomEvent) {
-      this.triggerEvent('complete', e.detail)
     },
   },
 })
