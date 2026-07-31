@@ -38,7 +38,11 @@
     "swc": true,
     "disableSWC": false,
     "disableUseStrict": false,
-    "urlCheck": false
+    "urlCheck": false,
+    "sassSetting": {
+      "sassCommonUseFilePath": "global.sass",
+      "scssCommonUseFilePath": "global.scss"
+    }
   },
   "simulatorType": "wechat",
   "simulatorPluginLibVersion": {},
