@@ -17,6 +17,7 @@
 - 完整的 TypeScript 类型支持，提供更好的开发体验和代码提示
 - 基于 axios-miniprogram 的网络请求封装，支持自动 Token 注入、统一错误处理、智能加载动画管理
 - AES-256 加密解密工具，支持标准 Base64 和 URL Safe Base64 两种格式
+- 图片 URL 兼容工具，自动处理 iOS WKWebView 下 HTTP 图片无法加载的问题（ATS 限制），按需转 base64
 - 集成 TDesign 组件库，提供丰富的 UI 组件
 - 自定义 TabBar 实现，基于 TDesign 组件，支持自动状态同步和页面切换
 - 完善的代码规范配置，支持 ESLint 和 Prettier 自动格式化
@@ -165,6 +166,29 @@ const urlSafeDecrypted = BASE64Decrypt(urlSafeEncrypted)
 
 // 自定义密钥和 IV
 const customEncrypted = Encrypt('hello world', 'your-key-32-bytes-long', 'your-iv-16-bytes')
+```
+
+### 图片 URL 兼容工具（iOS ATS）
+
+项目提供了图片 URL 兼容工具，位于 `miniprogram/utils/image.ts`，解决微信小程序在 iOS/Mac WKWebView 下 HTTP 图片因 ATS 限制无法加载的问题。
+
+**主要功能：**
+
+- 自动检测当前设备平台，仅在 iOS/Mac 下对 HTTP 图片触发 base64 转码
+- HTTPS 链接和非 iOS/Mac 平台直接返回原始 URL，零额外开销
+- 非完整 URL（不以 `http://` 或 `https://` 开头）会 console.warn 提示后原样返回
+- `urlToBase64` 使用 `wx.request` + `arraybuffer`，不经过 axios 拦截器
+
+**使用示例：**
+
+```typescript
+import { getImageDisplayUrl, urlToBase64 } from '../utils/image'
+
+// 推荐：直接获取可用于 <image> 显示的 URL（自动判断是否需要转 base64）
+const displayUrl = await getImageDisplayUrl('http://example.com/photo.jpg')
+
+// 或手动将任意图片转为 base64
+const base64 = await urlToBase64('https://example.com/photo.jpg')
 ```
 
 ### 时间日期格式化工具

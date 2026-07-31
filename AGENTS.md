@@ -58,6 +58,7 @@ miniprogram/
 │   ├── request.ts      # axios-miniprogram 封装：Token 注入、loading 管理、401 跳转
 │   ├── aes.ts          # AES-256-CBC 加密/解密 + URL Safe Base64 变体
 │   ├── util.ts         # 日期格式化（formatTime / formatDateTime）
+│   ├── image.ts         # 图片 URL 兼容（iOS ATS http→base64）
 │   └── platform.ts     # 微信宿主平台信息检测（设备类别/操作系统/桌面or移动）
 └── miniprogram_npm/    # 微信开发者工具构建的 npm 产物（已 gitignore，不直接编辑）
 typings/                # 全局类型声明（IAppOption、PlatformInfoType 等）+ 微信 API 类型
