@@ -1,6 +1,6 @@
-/* components/page-container/page-container.wxss */
+/* components/root-page-layout/root-page-layout.wxss */
 
-.page-container {
+.root-page-layout {
   width: 100%;
   min-height: 100vh;
   display: flex;
@@ -16,7 +16,7 @@
   }
 }
 
-.page-container__content {
+.root-page-layout__content {
   flex: 1;
   width: 100%;
   box-sizing: border-box;

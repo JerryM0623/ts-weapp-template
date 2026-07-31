@@ -3,7 +3,7 @@
   "navigationBarBackgroundColor": "#FFFFFF",
   "navigationBarTextStyle": "black",
   "usingComponents": {
-    "page-container": "../../components/page-container/page-container",
+    "root-page-layout": "../../components/root-page-layout/root-page-layout",
     "t-input": "/miniprogram_npm/tdesign-miniprogram/input/input",
     "t-button": "/miniprogram_npm/tdesign-miniprogram/button/button"
   }

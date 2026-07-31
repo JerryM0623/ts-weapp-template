@@ -230,9 +230,9 @@ const strDate = formatDateTime('2024-01-15', 'YYYY年MM月DD日')
 - `A`: 上午/下午
 - `a`: 上午/下午(小写)
 
-### PageContainer 页面容器组件
+### RootPageLayout 页面容器组件
 
-项目提供了基于 TDesign Navbar 封装的页面容器组件，位于 `miniprogram/components/page-container/` 目录。
+项目提供了基于 TDesign Navbar 封装的页面容器组件，位于 `miniprogram/components/root-page-layout/` 目录。
 
 **主要特性：**
 
@@ -242,7 +242,7 @@ const strDate = formatDateTime('2024-01-15', 'YYYY年MM月DD日')
 - 支持自定义导航栏样式和插槽内容
 - 完整的返回事件回调支持
 
-详细使用说明请参考 [PageContainer 组件使用手册](docs/page-container.md)。
+详细使用说明请参考 [RootPageLayout 组件使用手册](docs/root-page-layout.md)。
 
 ### 自定义 TabBar
 

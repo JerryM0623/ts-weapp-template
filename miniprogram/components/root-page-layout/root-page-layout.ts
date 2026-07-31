@@ -1,4 +1,4 @@
-// components/page-container/page-container.ts
+// components/root-page-layout/root-page-layout.ts
 
 Component({
   /**
@@ -65,7 +65,7 @@ Component({
       type: Boolean,
       value: true,
     },
-    // pageContainer背景色
+    // rootPageLayout 背景色
     containerBackgroundColor: {
       type: String,
       value: '#f5f5f5',

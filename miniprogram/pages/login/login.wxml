@@ -1,5 +1,5 @@
 <!--pages/login/login.wxml-->
-<page-container title="Request 使用示例">
+<root-page-layout title="Request 使用示例">
   <view class="login-container">
     <!-- 登录表单区域 -->
     <view class="form-section">
@@ -27,4 +27,4 @@
       </view>
     </view>
   </view>
-</page-container>
+</root-page-layout>

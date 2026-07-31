@@ -51,7 +51,7 @@ miniprogram/
 ├── app.json            # 页面注册、自定义 TabBar、navigationStyle: "custom"
 ├── app.scss            # 全局样式重置
 ├── api/                # API 接口层（每接口一个文件 + types.ts 定义 StandardResponse<T>）
-├── components/         # 共享组件（目前仅有 page-container）
+├── components/         # 共享组件（目前仅有 root-page-layout）
 ├── custom-tab-bar/     # 自定义 TabBar（基于 TDesign t-tab-bar）
 ├── pages/              # 页面（index, login, date, one~four）
 ├── utils/
@@ -67,7 +67,7 @@ typings/                # 全局类型声明（IAppOption、PlatformInfoType 等
 
 ### 自定义导航栏
 
-`app.json` 中 `window.navigationStyle: "custom"` 全局关闭了原生导航栏。所有需要导航栏的页面必须使用 `page-container` 组件（封装 TDesign `t-navbar`），该组件自动根据页面栈深度决定是否显示返回按钮。
+`app.json` 中 `window.navigationStyle: "custom"` 全局关闭了原生导航栏。所有需要导航栏的页面必须使用 `root-page-layout` 组件（封装 TDesign `t-navbar`），该组件自动根据页面栈深度决定是否显示返回按钮。
 
 ### 网络请求模式
 

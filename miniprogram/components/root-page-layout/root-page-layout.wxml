@@ -1,6 +1,6 @@
-<!--components/page-container/page-container.wxml-->
+<!--components/root-page-layout/root-page-layout.wxml-->
 <view
-  class="page-container {{containerSafeAreaInsetBottom ? 'page-container--safe' : ''}}"
+  class="root-page-layout {{containerSafeAreaInsetBottom ? 'root-page-layout--safe' : ''}}"
   style="--pg-container-bg-color: {{containerBackgroundColor}};"
 >
   <!-- 导航栏 -->
@@ -27,7 +27,7 @@
 
   <!-- 内容区域 -->
   <view
-    class="page-container__content"
+    class="root-page-layout__content"
   >
     <slot></slot>
   </view>

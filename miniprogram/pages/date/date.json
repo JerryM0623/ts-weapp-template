@@ -1,5 +1,5 @@
 {
   "usingComponents": {
-    "page-container": "../../components/page-container/page-container"
+    "root-page-layout": "../../components/root-page-layout/root-page-layout"
   }
 }

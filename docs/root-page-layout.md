@@ -1,8 +1,8 @@
-# PageContainer 组件使用手册
+# RootPageLayout 组件使用手册
 
 ## 概述
 
-PageContainer 是一个基于 TDesign `t-navbar` 封装的页面容器组件，提供统一的导航栏与内容区域布局。组件内部已引入 `t-navbar`，并通过样式变量透传导航栏与容器背景配置，适用于需要自定义导航栏的页面。
+RootPageLayout 是一个基于 TDesign `t-navbar` 封装的页面容器组件，提供统一的导航栏与内容区域布局。组件内部已引入 `t-navbar`，并通过样式变量透传导航栏与容器背景配置，适用于需要自定义导航栏的页面。
 
 ## 功能特性
 
@@ -22,7 +22,7 @@ PageContainer 是一个基于 TDesign `t-navbar` 封装的页面容器组件，�
 ```json
 {
   "usingComponents": {
-    "page-container": "../../components/page-container/page-container"
+    "root-page-layout": "../../components/root-page-layout/root-page-layout"
   }
 }
 ```
@@ -32,48 +32,48 @@ PageContainer 是一个基于 TDesign `t-navbar` 封装的页面容器组件，�
 ### 最简单的用法
 
 ```xml
-<page-container nav-bar-title="页面标题">
+<root-page-layout nav-bar-title="页面标题">
   <view>页面内容</view>
-</page-container>
+</root-page-layout>
 ```
 
 ### 自定义导航栏样式
 
 ```xml
-<page-container
+<root-page-layout
   nav-bar-title="页面标题"
   nav-bar-background-color="#123321"
   nav-bar-text-color="#ffffff"
 >
   <view>页面内容</view>
-</page-container>
+</root-page-layout>
 ```
 
 ### 隐藏返回按钮
 
 ```xml
-<page-container nav-bar-title="页面标题" nav-bar-left-arrow="{{false}}">
+<root-page-layout nav-bar-title="页面标题" nav-bar-left-arrow="{{false}}">
   <view>页面内容</view>
-</page-container>
+</root-page-layout>
 ```
 
 ### 隐藏导航栏
 
 ```xml
-<page-container nav-bar-title="页面标题" nav-bar-visible="{{false}}">
+<root-page-layout nav-bar-title="页面标题" nav-bar-visible="{{false}}">
   <view>页面内容</view>
-</page-container>
+</root-page-layout>
 ```
 
 ### 关闭底部安全区适配
 
 ```xml
-<page-container
+<root-page-layout
   nav-bar-title="页面标题"
   container-safe-area-inset-bottom="{{false}}"
 >
   <view>页面内容</view>
-</page-container>
+</root-page-layout>
 ```
 
 ## 样式与主题
@@ -120,12 +120,12 @@ PageContainer 是一个基于 TDesign `t-navbar` 封装的页面容器组件，�
 
 ### 默认插槽
 
-默认插槽用于渲染页面主体内容（位于内容区域 `page-container__content` 内）：
+默认插槽用于渲染页面主体内容（位于内容区域 `root-page-layout__content` 内）：
 
 ```xml
-<page-container nav-bar-title="页面标题">
+<root-page-layout nav-bar-title="页面标题">
   <view>页面内容</view>
-</page-container>
+</root-page-layout>
 ```
 
 ### left 插槽
@@ -133,10 +133,10 @@ PageContainer 是一个基于 TDesign `t-navbar` 封装的页面容器组件，�
 自定义左侧内容（返回按钮区域）：
 
 ```xml
-<page-container nav-bar-title="页面标题">
+<root-page-layout nav-bar-title="页面标题">
   <view slot="left">自定义左侧内容</view>
   <view>页面内容</view>
-</page-container>
+</root-page-layout>
 ```
 
 ### capsule 插槽
@@ -144,10 +144,10 @@ PageContainer 是一个基于 TDesign `t-navbar` 封装的页面容器组件，�
 自定义胶囊区域内容：
 
 ```xml
-<page-container nav-bar-title="页面标题">
+<root-page-layout nav-bar-title="页面标题">
   <view slot="capsule">自定义胶囊内容</view>
   <view>页面内容</view>
-</page-container>
+</root-page-layout>
 ```
 
 ### title 插槽
@@ -155,10 +155,10 @@ PageContainer 是一个基于 TDesign `t-navbar` 封装的页面容器组件，�
 自定义标题区域内容：
 
 ```xml
-<page-container nav-bar-title="页面标题">
+<root-page-layout nav-bar-title="页面标题">
   <view slot="title">自定义标题内容</view>
   <view>页面内容</view>
-</page-container>
+</root-page-layout>
 ```
 
 ## 事件说明
@@ -172,14 +172,14 @@ PageContainer 是一个基于 TDesign `t-navbar` 封装的页面容器组件，�
 ### 事件使用示例
 
 ```xml
-<page-container
+<root-page-layout
   nav-bar-title="页面标题"
   bind:success="onBackSuccess"
   bind:fail="onBackFail"
   bind:complete="onBackComplete"
 >
   <view>页面内容</view>
-</page-container>
+</root-page-layout>
 ```
 
 ```typescript
@@ -222,7 +222,7 @@ showLeftArrow = getCurrentPages().length > 1 && navBarLeftArrow && navBarVisible
 
 ```xml
 <!-- pages/example/index.wxml -->
-<page-container
+<root-page-layout
   nav-bar-title="示例页面"
   nav-bar-background-color="#ffffff"
   nav-bar-text-color="#000000"
@@ -239,7 +239,7 @@ showLeftArrow = getCurrentPages().length > 1 && navBarLeftArrow && navBarVisible
   <view class="content">
     <view>这是页面内容区域</view>
   </view>
-</page-container>
+</root-page-layout>
 ```
 
 ```json
@@ -247,7 +247,7 @@ showLeftArrow = getCurrentPages().length > 1 && navBarLeftArrow && navBarVisible
 {
   "navigationStyle": "custom",
   "usingComponents": {
-    "page-container": "../../components/page-container/page-container"
+    "root-page-layout": "../../components/root-page-layout/root-page-layout"
   }
 }
 ```
