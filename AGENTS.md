@@ -64,6 +64,25 @@ miniprogram/
 typings/                # 全局类型声明（IAppOption、PlatformInfoType 等）+ 微信 API 类型
 ```
 
+## 内置工具模块
+
+所有工具位于 `miniprogram/utils/`，均有对应的详细文档：
+
+| 模块 | 文件 | 文档 | 用途 |
+|------|------|------|------|
+| 网络请求 | `request.ts` | `docs/request.md` | axios-miniprogram 封装，Token 注入、loading 管理、401 跳转、`upload()` |
+| AES 加解密 | `aes.ts` | `docs/aes.md` | AES-256-CBC，`Encrypt`/`Decrypt`/`BASE64Encrypt`/`BASE64Decrypt` |
+| 图片工具 | `image.ts` | `docs/image.md` | iOS ATS 兼容，HTTP 图片自动转 base64，`getImageDisplayUrl`/`urlToBase64` |
+| 日期格式化 | `util.ts` | `docs/util.md` | `formatTime`/`formatDateTime`，支持多输入类型和自定义模板 |
+| 平台检测 | `platform.ts` | — | `getPlatformInfo()`，启动时调用，结果存入 `globalData.platformInfo` |
+
+所有组件文档：
+
+| 组件 | 目录 | 文档 | 用途 |
+|------|------|------|------|
+| RootPageLayout | `components/root-page-layout/` | `docs/root-page-layout.md` | 页面容器，封装 TDesign Navbar，自动返回按钮逻辑、安全区适配 |
+| 自定义 TabBar | `custom-tab-bar/` | `docs/custom-tab-bar.md` | 基于 TDesign t-tab-bar，需在 TabBar 页 `onShow` 中调用 `init()` |
+
 ## 核心架构决策
 
 ### 自定义导航栏
